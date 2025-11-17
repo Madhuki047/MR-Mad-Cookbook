@@ -1,0 +1,38 @@
+{% extends "recipes/base.html" %}
+{% block content %}
+<h1>
+  {% if current_category %}
+    Recipes in {{ current_category.name }}
+  {% else %}
+    All Recipes
+  {% endif %}
+</h1>
+
+<form method="get" class="mb-3">
+  <div class="input-group">
+    <input type="text" name="q" class="form-control"
+           placeholder="Search recipes..." value="{{ search_query|default:'' }}">
+    <button class="btn btn-outline-secondary" type="submit">Search</button>
+  </div>
+</form>
+
+<div class="row">
+  {% for recipe in recipes %}
+    <div class="col-md-4 mb-3">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">{{ recipe.title }}</h5>
+          <p class="card-text text-muted">
+            {{ recipe.category.name }} · {{ recipe.get_difficulty_display }}
+          </p>
+          <a href="{% url 'recipes:recipe_detail' recipe.slug %}" class="btn btn-sm btn-primary">
+            View
+          </a>
+        </div>
+      </div>
+    </div>
+  {% empty %}
+    <p>No recipes found.</p>
+  {% endfor %}
+</div>
+{% endblock %}

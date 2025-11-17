@@ -1,0 +1,27 @@
+{% extends "recipes/base.html" %}
+{% block content %}
+<h1>{{ recipe.title }}</h1>
+<p class="text-muted">
+  {{ recipe.category.name }} · {{ recipe.get_difficulty_display }}
+  · Total time: {{ recipe.total_time }} mins
+</p>
+
+<h3>Ingredients</h3>
+<ul>
+  {% for line in recipe.ingredients.splitlines %}
+    {% if line %}
+      <li>{{ line }}</li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
+<h3>Steps</h3>
+<ol>
+  {% for line in recipe.steps.splitlines %}
+    {% if line %}
+      <li>{{ line }}</li>
+    {% endif %}
+  {% endfor %}
+</ol>
+
+{% endblock %}

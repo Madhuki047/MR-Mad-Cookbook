@@ -1,0 +1,34 @@
+{% extends "recipes/base.html" %}
+
+{% block content %}
+<h1 class="mb-3">Welcome to MR Mad CookBook</h1>
+
+<h2>Categories</h2>
+<div class="row mb-4">
+  {% for category in categories %}
+    <div class="col-md-3 mb-2">
+      <a href="{% url 'recipes:recipe_by_category' category.slug %}"
+         class="btn btn-outline-primary w-100">{{ category.name }}</a>
+    </div>
+  {% empty %}
+    <p>No categories yet.</p>
+  {% endfor %}
+</div>
+
+<h2>Latest Recipes</h2>
+<div class="row">
+  {% for recipe in latest_recipes %}
+    <div class="col-md-4 mb-3">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">{{ recipe.title }}</h5>
+          <p class="card-text text-muted">{{ recipe.category.name }} · {{ recipe.get_difficulty_display }}</p>
+          <a href="{% url 'recipes:recipe_detail' recipe.slug %}" class="btn btn-sm btn-primary">View</a>
+        </div>
+      </div>
+    </div>
+  {% empty %}
+    <p>No recipes yet.</p>
+  {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MR Mad CookBook</title>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+  <div class="container">
+    <a class="navbar-brand" href="{% url 'recipes:home' %}">MR Mad CookBook</a>
+    <div>
+      <a class="nav-link d-inline text-light me-3" href="{% url 'recipes:recipe_list' %}">All Recipes</a>
+      <a class="nav-link d-inline text-light" href="{% url 'recipes:category_list' %}">Categories</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+    {% block content %}{% endblock %}
+</div>
+</body>
+</html>

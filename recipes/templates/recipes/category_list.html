@@ -1,0 +1,14 @@
+{% extends "recipes/base.html" %}
+{% block content %}
+<h1>Categories</h1>
+<ul class="list-group">
+  {% for category in categories %}
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      <a href="{% url 'recipes:recipe_by_category' category.slug %}">{{ category.name }}</a>
+      <span class="badge bg-secondary">{{ category.recipes.count }}</span>
+    </li>
+  {% empty %}
+    <li class="list-group-item">No categories yet.</li>
+  {% endfor %}
+</ul>
+{% endblock %}
