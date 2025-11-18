@@ -44,6 +44,6 @@ Django handles URL routing, the ORM, business logic in views, and HTML rendering
 
 ## Live Demo
 http://127.0.0.1:8000/
-![Screenshot 1 - Home page](Screenshot (338).png)
-![Screenshot 2 - All recipes page](Screenshot (339).png)
-![Screenshot 3 - Categories page](Screenshot (340).png)
+![Screenshot 1 - Home page](https://raw.githubusercontent.com/Madhuki047/MR-Mad-Cookbook/main/Screenshot%20(338).png)
+![Screenshot 2 - All recipes page](https://raw.githubusercontent.com/Madhuki047/MR-Mad-Cookbook/main/Screenshot%20(339).png)
+![Screenshot 3 - Categories page](https://raw.githubusercontent.com/Madhuki047/MR-Mad-Cookbook/main/Screenshot%20(340).png)
