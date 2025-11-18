@@ -20,7 +20,7 @@ Django handles URL routing, the ORM, business logic in views, and HTML rendering
 
 ## Features
 
-- **Categories** (e.g. Breakfast, Dessert, Vegan)
+- **Categories** (e.g. British, Sri Lankan, Italian, Chinese)
 - **Recipes** with:
   - ingredients  
   - step-by-step instructions  
@@ -37,17 +37,13 @@ Django handles URL routing, the ORM, business logic in views, and HTML rendering
 
 ## Tech Stack
 
-- Python 3  
-- Django  
-- SQLite (development)  
-- Bootstrap 5 (CDN)  
+- Backend : Python 3, Django
+- Frontend: Django Templates, Bootstrap 5
+- Database: SQLite (development)
+- Tools   : Git, GitHub  
 
-
-## Project Structure
-
-```text
-MR-Mad-Cookbook/
-├─ manage.py
-├─ mrmad_cookbook/        # Project config: settings, urls, WSGI/ASGI
-└─ recipes/               # Core app: models, views, templates
-   └─ templates/recipes/  # base.html, home, lists, details
+## Live Demo
+http://127.0.0.1:8000/
+![Screenshot 1 - Home page](Screenshot (338).png)
+![Screenshot 2 - All recipes page](Screenshot (339).png)
+![Screenshot 3 - Categories page](Screenshot (340).png)
